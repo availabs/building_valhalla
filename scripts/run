@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+valhalla_service /data/valhalla.json

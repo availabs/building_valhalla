@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Starts of a container of the built image and executes the build_tileset script within that container
+# On the host, the built tileset can be found at ./data/valhalla
+
+set -e
+
+docker run -it -v "$(pwd)/data":/data -v "$(pwd)/scripts":/scripts avail/valhalla:3.0.8 /bin/bash /scripts/build_tileset

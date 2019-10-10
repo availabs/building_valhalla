@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# SEE https://github.com/valhalla/valhalla/tree/3176db5363b4a3c678532b8d496274858977776d#running
+
+set -e
+
+pushd /data >/dev/null
+
+TILESET_DIR=/data/valhalla
+
+rm -rf "$TILESET_DIR"
+
+# Generate the valhalla configuration file
+valhalla_build_config \
+  --mjolnir-tile-dir "$TILESET_DIR/valhalla_tiles" \
+  --mjolnir-tile-extract "/data/valhalla_tiles.tar" \
+  --mjolnir-timezone "$TILESET_DIR/valhalla_tiles/timezones.sqlite" \
+  --mjolnir-admin "$TILESET_DIR/valhalla_tiles/admins.sqlite" \
+  > "/data/valhalla.json"
+
+# Create a tileset using any *.osm.pbf files in the container's /data directory
+valhalla_build_tiles -c "/data/valhalla.json" /data/*.osm.pbf
+
+# Create the tar archive of the tileset
+find valhalla | sort -n | tar cf valhalla_tiles.tar --no-recursion -T -
+
+popd >/dev/null
