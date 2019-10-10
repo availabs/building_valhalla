@@ -18,7 +18,7 @@ Got error:
 Removing intermediate container 20c2b29f630a
 ```
 
-Digging into the source code... [scripts]install_from_source.sh/(https://github.com/valhalla/docker/blob/5b484f4f00d29f4e71cd20e6215908a9a2093be1/scripts/install_from_source.sh)
+Digging into the source code... [scripts/install_from_source.sh](https://github.com/valhalla/docker/blob/5b484f4f00d29f4e71cd20e6215908a9a2093be1/scripts/install_from_source.sh)
 ```
 # get the software installed
 git clone \
