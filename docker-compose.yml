@@ -9,4 +9,3 @@ services:
         - ./data:/data
         - ./scripts:/scripts
       command: /scripts/run
-      restart: always
