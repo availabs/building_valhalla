@@ -16,7 +16,7 @@
     "@turf/helpers": "^6.1.4",
     "@turf/turf": "^5.1.6",
     "eslint-config-prettier": "^6.4.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mississippi": "^4.0.0",
     "prettier": "^1.18.2",
     "request": "^2.88.0",
